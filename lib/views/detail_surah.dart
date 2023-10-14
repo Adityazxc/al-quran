@@ -1,9 +1,10 @@
-
-
 import 'package:flutter/material.dart';
 
+
 class DetailSurah extends StatelessWidget {
-  const DetailSurah({super.key});
+  DetailSurah({Key? key}) : super(key: key);
+  final List<int> numberList=const <int>[1,2,3,4,5,6] ;
+  int hexColor = int.parse('240F4F',radix: 16);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,9 @@ class DetailSurah extends StatelessWidget {
           "Al-Fatiah",
             style: TextStyle(
             fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.purple
+            fontWeight: FontWeight.w700,
+            fontFamily: 'Poppins',
+            color: Color(0xff672CBC)
           ),
         ),
 
@@ -25,7 +27,9 @@ class DetailSurah extends StatelessWidget {
             Icons.arrow_back_ios,
             color: Colors.grey
             ),
-          onPressed: (){}
+          onPressed: (){
+            Navigator.pop(context);
+          }
         ),
 
         actions: <Widget>[
@@ -33,7 +37,7 @@ class DetailSurah extends StatelessWidget {
             padding: const EdgeInsets.only(right: 24.0),
             child: IconButton(
               onPressed:(){}, 
-              icon:  Icon(
+              icon:const Icon(
                 Icons.search, 
                 size: 24,
                 color: Colors.grey
@@ -43,106 +47,198 @@ class DetailSurah extends StatelessWidget {
         ],
   
       ), 
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-            child:Column(          
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(24.0),
-                  child: Card(
-                  color: Colors.purple.shade200,              
-                    child:const Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(28.0),
-                        child:  Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                            "Al-Fatihah",
-                              style:  TextStyle(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white
-                                      ),
-                            ),
+      body: Container(
+        margin: const EdgeInsets.all(24.0),
+        child: Column(
+          children: [
+            Container(                                               
+              decoration:  BoxDecoration(                
+                borderRadius: BorderRadius.circular(25),
+                gradient: LinearGradient(
+                begin: Alignment(0.71, -0.71),
+                end: Alignment(-0.71, 0.71),
+                colors: [Color(0xFFDF98FA), Color(0xFF9055FF)],
+                ),
+              ),
 
-                            Text(
-                            "The Opening",
-                              style:  TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white
-                                      ),
-                            ),
-                            const SizedBox(height: 16.0,),
-
-                            Divider(
-                              height: 15,
-                              color: Colors.grey,
-                              thickness: 1,
-                            ),
-                            const SizedBox(height: 16.0,),
-
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                // Relevation
-
-                                Text(
-                                "Mekkah",
-                                  style:  TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.white
-                                          ),
-                                ),
-
-                                 // number of verses
-                                const SizedBox(width: 10.0,),
-
-                                Text(
-                                "7",
-                                  style:  TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.white
-                                          ),
-                                ),
-
-                               const SizedBox(width: 5.0,),
-
-                                Text(
-                                "verse",
-                                  style:  TextStyle(
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.white
-                                          ),
-                                ),
-
-                              ],
-                            ),
-                            const SizedBox(height: 48.0,),
-                            Text(
-                            "﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-                              style:  TextStyle(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.w200,
-                                      color: Colors.white
-                                      ),
-                            ),
-
-
-                          ]
-                        )
+              child: const Padding(
+                padding: EdgeInsets.all(56.0),
+                child: Column(
+                  children: [
+                     Text(
+                      'Al-Fatiah',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 26,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
                       ),
-                    )
-                  )
-                )
-              ]
-            )
+              
+                    Text(
+                      'The Opening',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
+                    ),
+
+                  const SizedBox(height: 16.0),
+                   Divider(
+                          height: 15,
+                          color: Colors.white,
+                          thickness: 1,                        
+                        ),
+                  const SizedBox(height: 16.0),
+                  
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Mekah',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                              height: 0,
+                            ),
+                          ),
+                        SizedBox(width: 10),
+                        Text(
+                          '7',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            height: 0,
+                          ),
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          'Verses',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            height: 0,
+                          ),
+                        ),
+              
+                        SizedBox(width: 32),
+                      ],
+                    ),
+                        Text(
+                          'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 32,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            height: 0,
+                          ),
+                        ),
+                  ]
+                        
+                ),
+              ),
+              ),
+
+            Expanded(
+               child: ListView(
+                children: numberList.map((number) {
+                  return ListTile(                      
+                  
+                  subtitle: Column(            
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        decoration: ShapeDecoration(
+                          color:Color(0x0C121931),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)
+                            )
+                          ),
+                        child: Padding(
+                          padding: EdgeInsets.all(13.0),                  
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,                
+                            children: [
+                              Container(
+                                child: Stack(
+                                alignment: Alignment.center,
+                                children: <Widget>[
+                                  const CircleAvatar(backgroundColor: Color(0xff863ED5)),
+                                              // number surah
+                                  Text(
+                                    "$number",
+                                    style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w200,                              
+                                      color: Colors.white
+                                    ),
+                                  ),
+                                ],                      
+                                          ),
+                              ),
+                              Image.asset("images/play.png"),
+                            
+                            ],
+                          ),
+                        ),
+                      ),
+                  
+                      SizedBox(height: 24),
+                     const Text(
+                        "ﻦﻳِمَلٰعْلا ِّبَر ِهَّلِل ُدْمَحْلا",
+                        textAlign: TextAlign.right,
+                        style:  TextStyle(                  
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color:  Color(0xff240f4f),
+                        ),
+                      ),
+                  
+                      SizedBox(height: 16),
+                      const Text(
+                        "[All] praise is [due] to Allah, Lord of the worlds -",
+                        style:  TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color:  Color(0xff240f4f),
+                        ),
+                      ),
+                      const SizedBox(height: 16.0),
+                      const Divider(
+                        height: 15,
+                        color: Colors.grey,
+                        thickness: 1,                        
+                      ),
+                  
+                      const SizedBox(height: 16.0),
+                    ],
+                  ),
+                  
+                  );
+                }).toList(),
+              ),
+            ),
+          ],
         ),
+      ),
     );
+    
   }
 }
