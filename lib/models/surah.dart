@@ -2,11 +2,7 @@
 //
 //     final surah = surahFromJson(jsonString);
 
-import 'dart:convert';
 
-Surah surahFromJson(String str) => Surah.fromJson(json.decode(str));
-
-String surahToJson(Surah data) => json.encode(data.toJson());
 
 class Surah {
     Data data;

@@ -70,7 +70,8 @@ class MainScreen extends StatelessWidget {
               );
             }if(snapshot.hasError){
               return Text("Error: ${snapshot.error}");
-            }         
+            }   
+            List<ListSurah> surahList = snapshot.data??[];      
             return Column(          
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -182,14 +183,19 @@ class MainScreen extends StatelessWidget {
                       itemCount: snapshot.data!.length,                    
                       itemBuilder: (context, index) {
                       ListSurah surah = snapshot.data![index];
+           
       
-                        return InkWell(
-                          onTap: () {
-                            Navigator.push(context,MaterialPageRoute(builder: (context){
-                              return DetailSurah();
-                            }));                        
-                          },
-                          child: ListTile(
+                        return 
+                    
+                           ListTile(
+                             onTap: () {
+                              // Periksa tipe data ListSurah untuk memastikan kecocokan dengan DetailSurah
+                                assert(surah is ListSurah);
+
+                               Navigator.push(context,MaterialPageRoute(builder: (context){
+                                return DetailSurah(surah:surah);
+                               }));
+                             },   
                             leading: Stack(
                               alignment: Alignment.center,
                               children: <Widget>[
@@ -227,7 +233,7 @@ class MainScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700,
                                 height: 0,
                                 ),
-                              ),                               
+                                                            ),                               
                         
                             subtitle: Container(
                               margin: const EdgeInsets.only(top:10),
@@ -249,7 +255,7 @@ class MainScreen extends StatelessWidget {
                                  const SizedBox(width: 10.0),
                                   // number of verses
                                    Text(
-                                    "${surah.numberOfVerses}",
+                                    "${surah.numberOfVerses} Ayat",
                                     style: const TextStyle(
                                         color: Color(0xFF8789A3),
                                         fontSize: 12,
@@ -260,19 +266,7 @@ class MainScreen extends StatelessWidget {
                                    
                                   ),
                                                     
-                                  const SizedBox(width: 5.0),
-                                   const Text(
-                                    "Ayat",
-                                    style: TextStyle(
-                                        color: Color(0xFF8789A3),
-                                        fontSize: 12,
-                                        fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.w500,
-                                        height: 0,
-                                    ),
-                                   
-                                  ),
-                                                    
+                                                
                               const Divider(
                                     height: 15,
                                     color: Colors.grey,
@@ -281,7 +275,7 @@ class MainScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-                          ),
+                          
                         );
                       }
       
