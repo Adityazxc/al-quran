@@ -89,7 +89,7 @@ class ListSurahMobile extends StatelessWidget {
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset("images/last_edit.png"),
+                                      Image.asset("images/last_edit.png",width: 35.0,height: 35.0,),
                                       const SizedBox(
                                         width: 10.0,
                                       ),
@@ -106,7 +106,7 @@ class ListSurahMobile extends StatelessWidget {
                                     ],
                                   ),
                                   const SizedBox(
-                                    width: 89,
+                                    width: 88,
                                     child: Text(
                                       'Al-Fatiah',
                                       style: TextStyle(
@@ -122,7 +122,7 @@ class ListSurahMobile extends StatelessWidget {
                                     height: 10.0,
                                   ),
                                   const SizedBox(
-                                    width: 89,
+                                    width: 88,
                                     child: Opacity(
                                       opacity: 0.80,
                                       child: Text(
@@ -139,7 +139,17 @@ class ListSurahMobile extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              Image.asset("images/quran.png")
+                              // SizedBox(
+                              //   height: 50,
+                              //   width: 50,
+                              //   // child: Container(
+                              //   //   color: Colors.white,
+                              //   // ),
+                              //   child: Image.asset("images/Quran.png"),
+                              // )
+                              // // Image.asset("images/quran.png", width: 5.0, height: 5.0, fit: BoxFit.cover),
+
+  
                             ],
                           ))),
                   const SizedBox(
