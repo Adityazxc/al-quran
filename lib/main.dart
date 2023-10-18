@@ -1,4 +1,3 @@
-// import 'package:al_quran/views/detail_surah.dart';
 import 'package:al_quran/views/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +14,7 @@ class MyApp extends StatelessWidget {
      title: "Al-quran",
 
      theme: ThemeData(),
-     home: MainScreen(),
-    //  home: DetailSurah(),
+    home: const MainScreen(),
     );
   }
 }
