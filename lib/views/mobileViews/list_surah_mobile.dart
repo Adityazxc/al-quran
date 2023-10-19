@@ -139,15 +139,15 @@ class ListSurahMobile extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              // SizedBox(
-                              //   height: 50,
-                              //   width: 50,
-                              //   // child: Container(
-                              //   //   color: Colors.white,
-                              //   // ),
-                              //   child: Image.asset("images/Quran.png"),
-                              // )
-                              // // Image.asset("images/quran.png", width: 5.0, height: 5.0, fit: BoxFit.cover),
+                              SizedBox(
+                                height: 80,
+                                width: 120,
+                                // child: Container(
+                                //   color: Colors.white,
+                                // ),
+                                child: Image.asset("images/Quran.png"),
+                              )
+
 
   
                             ],
