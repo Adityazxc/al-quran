@@ -1,16 +1,18 @@
-# al_quran
+# Al-Quran
+Aplikasi untuk membaca Al-quran yang diambil dari API kementrian agama.
 
-A new Flutter project.
+# Introduction
+Aplikasi Al-Quran ini dibuat hanya untuk kebutuhan belajar untuk mengambil data Al-Quran dari API open source Kementrian Agama. Aplikasi Alquran menampilkan seluruh surat dari Al-Quran beserta artinya dengan desain yang menyesuaikan dari telepon genggam hingga web.
+## Features & Screenshots
+|Nama            |Screenshot       |Deskripsi
+|-------------------|------------------|-------------------------------------------------|
+|Home Mobile        |![](https://github.com/Adityazxc/al-quran/blob/main/images/home_page.jpg)|Tampilan menu utama untuk menampilkan seluruh list surat dalam tampilan mobile 
+|Detail Surat Mobile|![](https://github.com/Adityazxc/al-quran/blob/main/images/detail.jpg)|Tampilan isi surat untuk menampilkan isi surat dan terjemahannya dalam tampilan mobile
+|Home Web           |![](https://github.com/Adityazxc/al-quran/blob/main/images/list_surah_web.jpg)|Tampilan menu utama untuk menampilkan seluruh list surat dalam tampilan web 
+|Detail Surat web   |![](https://github.com/Adityazxc/al-quran/blob/main/images/detail_surah_web.jpg)|Tampilan isi surat untuk menampilkan isi surat dan terjemahannya dalam tampilan web
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Depedencies
+- cuppertino_icons
+- http
+- get
